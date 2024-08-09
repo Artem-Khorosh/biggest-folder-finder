@@ -18,7 +18,9 @@ public class SizeCalculator {
 
     public static long getSizeFromHumanReadable(String size) {
         char sizeFactor = size.replaceAll("[0-9\\s+]+", "").charAt(0);
+
         int multiplier = char2multiplier.get(sizeFactor);
+
         long length = multiplier * Long.valueOf(size.replaceAll("[^0-9]", ""));
         return length;
     }

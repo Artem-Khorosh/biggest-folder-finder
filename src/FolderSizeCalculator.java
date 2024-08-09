@@ -24,7 +24,7 @@ private  Node node;
         List<FolderSizeCalculator> subTask = new LinkedList<>();
         File[] files = folder.listFiles();
         for (File file : files) {
-            Node child = new Node(file, node.getLimit());
+            Node child = new Node(file);
             FolderSizeCalculator task = new FolderSizeCalculator(child);
             task.fork();
             subTask.add(task);
